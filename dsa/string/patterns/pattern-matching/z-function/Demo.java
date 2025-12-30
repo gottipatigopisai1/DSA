@@ -3,15 +3,15 @@ import java.util.Scanner;
 class Solution {
 	public void patternMatching(String text, String pattern) {
 		String combinedText = pattern + "$" + text;
-		
+		System.out.println(combinedText);
 		int z[] = zFunction(combinedText);
 		
 		int patternLen = pattern.length();
 		int textLen = text.length();
-		
+	
 		for(int i = 0; i < textLen; i++) {
 				if(z[i] == patternLen) {
-					System.out.println(i);
+					System.out.println(i - patternLen - 1);
 				}
 		}
 	}
